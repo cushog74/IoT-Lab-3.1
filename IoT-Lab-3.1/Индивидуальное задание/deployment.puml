@@ -1,0 +1,62 @@
+@startuml
+skinparam backgroundColor #F8F8F8
+skinparam shadowing false
+skinparam nodesep 40
+skinparam ranksep 60
+skinparam defaultFontName Arial
+skinparam stereotypeCBackgroundColor #ADD1B2
+skinparam stereotypeIBackgroundColor #ADD1B2
+
+title Вариант 9: Deployment-диаграмма распределённой IoT-системы\n(6 Edge, 3 Fog, 1 Cloud, умеренная нагрузка)
+
+package "Edge (Краевой уровень) - 6 устройств" #LightBlue {
+  [Датчик 1 (камера)] as e1
+  [Датчик 2 (кнопка)] as e2
+  [Датчик 3 (термостат)] as e3
+  [Датчик 4 (аналитика)] as e4
+  [Датчик 5 (промышленный)] as e5
+  [Датчик 6 (события)] as e6
+}
+
+package "Fog (Туманный уровень) - 3 узла" #LightGreen {
+  [Fog-узел 1] as f1
+  [Fog-узел 2] as f2
+  [Fog-узел 3] as f3
+}
+
+package "Cloud (Облачный уровень)" #LightGray {
+  [Ноутбук-сервер (аналитика и хранение)] as c
+}
+
+[Робот-курьер\n(транспортировка данных)] as courier
+[Смартфон\n(буферизация)] as phone
+
+e1 --> f1 : ZigBee
+e2 --> f1 : Wi-Fi
+e3 --> f2 : Bluetooth
+e4 --> f2 : ZigBee
+e5 --> f3 : Wi-Fi
+e6 --> f3 : Ethernet
+
+f1 --> courier : Ethernet
+f2 --> courier : Ethernet
+f3 --> courier : Ethernet
+
+courier --> phone : Bluetooth
+phone --> c : Интернет
+
+note bottom of f1
+  Локальная обработка
+  и фильтрация данных
+end note
+
+note bottom of courier
+  Транспортный робот
+  (передача между уровнями)
+end note
+
+note bottom of c
+  Глубокая аналитика
+  и долговременное хранение
+end note
+@enduml

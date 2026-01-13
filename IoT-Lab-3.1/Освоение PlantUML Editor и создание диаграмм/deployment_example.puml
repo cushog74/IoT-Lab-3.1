@@ -1,0 +1,29 @@
+@startuml
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam nodesep 10
+skinparam ranksep 20
+
+title Deployment-диаграмма IoT системы "Умный дом"
+
+node "Краевой уровень (Edge)" as edge_layer {
+    [Робот-датчик 1]
+    [Робот-датчик 2]
+    [Робот-датчик N]
+}
+
+node "Туманный уровень (Fog)" as fog_layer {
+    (Fog-обработчик 1)
+    (Fog-обработчик 2)
+}
+
+cloud "Облачный уровень (Cloud)" as cloud_layer {
+    (Ноутбук-сервер)
+}
+
+[Робот-датчик 1] --> (Fog-обработчик 1) : Wi-Fi
+[Робот-датчик 2] --> (Fog-обработчик 1) : BLE
+[Робот-датчик N] --> (Fog-обработчик 2) : LoRaWAN
+(Fog-обработчик 1) --> (Ноутбук-сервер) : HTTPS
+(Fog-обработчик 2) --> (Ноутбук-сервер) : MQTT
+@enduml

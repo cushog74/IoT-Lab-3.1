@@ -1,0 +1,29 @@
+@startuml
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam nodesep 10
+skinparam ranksep 20
+
+title Deployment-диаграмма IoT системы "Умный дом"
+
+node "Краевой уровень (Edge)" as edge_layer {
+    [Датчик температуры 1]
+    [Датчик влажности 2]
+    [Датчик движения 3]
+}
+
+node "Туманный уровень (Fog)" as fog_layer {
+    (Fog-шлюз 1)
+    (Fog-шлюз 2)
+}
+
+cloud "Облачный уровень (Cloud)" as cloud_layer {
+    (Сервер анализа)
+}
+
+[Датчик температуры 1] --> (Fog-шлюз 1) : ZigBee
+[Датчик влажности 2] --> (Fog-шлюз 1) : Bluetooth
+[Датчик движения 3] --> (Fog-шлюз 2) : Wi-Fi
+(Fog-шлюз 1) --> (Сервер анализа) : Ethernet
+(Fog-шлюз 2) --> (Сервер анализа) : MQTT
+@enduml
