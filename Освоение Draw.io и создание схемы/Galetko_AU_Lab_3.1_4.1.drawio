@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 YaBrowser/25.12.0.0 Safari/537.36" version="29.3.1">
+  <diagram name="Страница-1" id="UA7tgw9SmUolJFyHT-61">
+    <mxGraphModel dx="1806" dy="1030" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QjvrPu8Zu4dA3kVVdiFc-2" parent="1" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.sensor;fillColor=#5294CF;gradientColor=none;" value="&#xa;Датчик (Robot Sensor)&#xa;&#xa;" vertex="1">
+          <mxGeometry height="90" width="76.5" x="80" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="QjvrPu8Zu4dA3kVVdiFc-4" parent="1" style="image;html=1;image=img/lib/clip_art/computers/Server_128x128.png;labelBackgroundColor=none;" value="&#xa;Fog-обработчик&#xa;&#xa;" vertex="1">
+          <mxGeometry height="80" width="80" x="270" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="QjvrPu8Zu4dA3kVVdiFc-5" parent="1" style="image;html=1;image=img/lib/clip_art/computers/Server_128x128.png;labelBackgroundColor=none;" value="&lt;br&gt;Ноутбук-сервер&lt;div&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="470" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="QjvrPu8Zu4dA3kVVdiFc-6" parent="1" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/general/Mobile.svg;labelBackgroundColor=none;" value="&#xa;Смартфон пользователя&#xa;&#xa;" vertex="1">
+          <mxGeometry height="90" width="53.73" x="690" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="QjvrPu8Zu4dA3kVVdiFc-7" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="QjvrPu8Zu4dA3kVVdiFc-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="160" y="450" as="sourcePoint" />
+            <mxPoint x="440" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QjvrPu8Zu4dA3kVVdiFc-10" connectable="0" parent="QjvrPu8Zu4dA3kVVdiFc-7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;MQTT / HTTP&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.3455" y="1" as="geometry">
+            <mxPoint x="14" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QjvrPu8Zu4dA3kVVdiFc-8" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="QjvrPu8Zu4dA3kVVdiFc-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="350" y="449.5" as="sourcePoint" />
+            <mxPoint x="460" y="449.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QjvrPu8Zu4dA3kVVdiFc-11" connectable="0" parent="QjvrPu8Zu4dA3kVVdiFc-8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;TCP/IP&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.05" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QjvrPu8Zu4dA3kVVdiFc-9" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=-0.056;entryY=0.533;entryDx=0;entryDy=0;entryPerimeter=0;" target="QjvrPu8Zu4dA3kVVdiFc-6" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="550" y="449.5" as="sourcePoint" />
+            <mxPoint x="660" y="449.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QjvrPu8Zu4dA3kVVdiFc-12" connectable="0" parent="QjvrPu8Zu4dA3kVVdiFc-9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;REST API / HTTPS&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0219" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QjvrPu8Zu4dA3kVVdiFc-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;autosize=1;resizable=0;" value="&lt;div&gt;Edge / Fog Computing&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="140" x="240" y="390" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
